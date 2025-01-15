@@ -244,6 +244,10 @@
 
         function downloadPDF() {
             const element = document.getElementById("resumeContent");
+             if (!element || element.innerHTML.trim() === "") {
+                alert("First, you have to generate the resume content before downloading it.");
+                return;
+            }
             const options = {
                 margin: 1,
                 filename: 'resume.pdf',
